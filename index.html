@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emerya Sidi Yahia — Institut de Beauté, Bien-être &amp; Soins Esthétiques | Alger</title>
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Design Tokens: Quiet Luxury Palette for Emerya Sidi Yahia -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF8F5',
+            cream: '#F3EFE9',
+            champagne: '#C5A47E',
+            'champagne-dark': '#AC8B65',
+            'champagne-soft': '#F4ECE1',
+            charcoal: '#1F1D1B',
+            taupe: '#7A7267',
+            'taupe-light': '#B5ACA0',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            luxe: '0 14px 40px -14px rgba(31, 29, 27, 0.08)',
+            card: '0 4px 24px -6px rgba(31, 29, 27, 0.05)',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-ivory text-charcoal font-sans antialiased selection:bg-champagne/25 selection:text-charcoal overflow-x-hidden">
+  <!-- Toast Notification Container (No alert() / confirm()) -->
+  <div
+    id="toast-container"
+    aria-live="polite"
+    class="fixed bottom-20 sm:bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-24 z-50 flex flex-col gap-2 max-w-sm w-[calc(100%-2rem)] pointer-events-none"
+  ></div>
+
+  <!-- Floating WhatsApp Button (Direct Real Link) -->
+  <a
+    href="https://wa.me/213553463608"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contacter Emerya Sidi Yahia sur WhatsApp"
+    class="fixed bottom-5 right-5 z-40 group flex items-center gap-2.5 bg-charcoal hover:bg-champagne-dark text-white pl-3.5 pr-4 py-3 rounded-full shadow-luxe transition-all duration-300 active:scale-95"
+  >
+    <span class="w-2 h-2 rounded-full bg-champagne group-hover:bg-white transition-colors"></span>
+    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+    <span class="text-xs font-medium tracking-wide hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- Top Utility Strip (Discreet Real Info Bar) -->
+  <div class="bg-charcoal text-ivory/85 text-[11px] sm:text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+        <span>6 Chemin Sidi Yahia, Bir Mourad Raïs, Alger</span>
+        <span class="hidden md:inline text-ivory/30">•</span>
+        <span class="hidden md:inline">Ouvert 7j/7 : 09h00 – 20h00</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:+213553463608" class="hover:text-champagne transition-colors font-medium">
+          0553 46 36 08
+        </a>
+        <a
+          href="https://wa.me/213553463608"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline text-champagne hover:text-white transition-colors"
+        >
+          WhatsApp Direct
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Sticky Navigation Header -->
+  <header class="sticky top-0 z-30 bg-ivory/92 backdrop-blur-md border-b border-charcoal/8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
+        <!-- Brand Monogram & Wordmark -->
+        <button
+          type="button"
+          onclick="switchView('institut')"
+          class="flex items-center gap-3 text-left group focus:outline-none"
+        >
+          <span class="w-10 h-10 rounded-full border border-champagne/60 bg-white flex items-center justify-center font-serif text-xl font-semibold text-charcoal group-hover:border-charcoal transition-colors shrink-0">
+            E
+          </span>
+          <span class="leading-none">
+            <span class="block font-serif text-2xl font-semibold tracking-wide text-charcoal">
+              EMERYA
+            </span>
+            <span class="block text-[10px] uppercase tracking-[0.24em] text-taupe mt-1">
+              Sidi Yahia • Alger
+            </span>
+          </span>
+        </button>
+
+        <!-- 3-Tab Navigation (Desktop) -->
+        <nav aria-label="Navigation principale" class="hidden md:flex items-center bg-cream/90 p-1 rounded-full border border-charcoal/8">
+          <button
+            id="nav-desktop-institut"
+            type="button"
+            onclick="switchView('institut')"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-white text-charcoal shadow-sm"
+          >
+            L'Institut
+          </button>
+          <button
+            id="nav-desktop-rdv"
+            type="button"
+            onclick="switchView('rdv')"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 text-taupe hover:text-charcoal"
+          >
+            Prendre Rendez-vous
+          </button>
+          <button
+            id="nav-desktop-cliente"
+            type="button"
+            onclick="switchView('cliente')"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 text-taupe hover:text-charcoal flex items-center gap-2"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+            <span>Espace Cliente</span>
+          </button>
+        </nav>
+
+        <!-- Direct Phone / Quick Booking Action -->
+        <div class="flex items-center gap-2.5">
+          <a
+            href="tel:+213553463608"
+            class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-charcoal/12 bg-white hover:border-champagne text-xs font-medium text-charcoal transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 text-champagne-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>0553 46 36 08</span>
+          </a>
+          <button
+            type="button"
+            onclick="switchView('rdv')"
+            class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-charcoal hover:bg-champagne-dark text-white text-xs sm:text-sm font-medium transition-all active:scale-[0.98]"
+          >
+            <span>Réserver</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3-Tab Navigation (Mobile-First Row) -->
+      <div class="md:hidden pb-3">
+        <div class="grid grid-cols-3 bg-cream p-1 rounded-2xl border border-charcoal/8 gap-1">
+          <button
+            id="nav-mobile-institut"
+            type="button"
+            onclick="switchView('institut')"
+            class="py-2 px-2 rounded-xl text-xs font-medium transition-all bg-white text-charcoal shadow-sm"
+          >
+            L'Institut
+          </button>
+          <button
+            id="nav-mobile-rdv"
+            type="button"
+            onclick="switchView('rdv')"
+            class="py-2 px-2 rounded-xl text-xs font-medium transition-all text-taupe"
+          >
+            Rendez-vous
+          </button>
+          <button
+            id="nav-mobile-cliente"
+            type="button"
+            onclick="switchView('cliente')"
+            class="py-2 px-2 rounded-xl text-xs font-medium transition-all text-taupe flex items-center justify-center gap-1"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+            <span>Espace</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- VIEW 1: L'INSTITUT (PUBLIC LUXURY SHOWCASE)               -->
+  <!-- ========================================================= -->
+  <main id="view-institut">
+    <!-- Spacious Hero Section -->
+    <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden">
+      <div class="pointer-events-none absolute -top-28 right-0 w-[28rem] h-[28rem] rounded-full bg-champagne/12 blur-3xl"></div>
+      <div class="pointer-events-none absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-cream blur-3xl"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          <!-- Left Editorial Column -->
+          <div class="lg:col-span-7 space-y-7">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-charcoal/10 text-xs text-taupe tracking-wide shadow-card">
+              <span class="w-2 h-2 rounded-full bg-champagne"></span>
+              <span>Institut de Beauté &amp; Bien-être • Sidi Yahia, Alger • 7j/7</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-[3.75rem] leading-[1.08] font-medium text-charcoal tracking-tight">
+              L'art du soin sur-mesure, dans un écrin de
+              <span class="italic text-champagne-dark">sérénité</span> à Sidi Yahia.
+            </h1>
+
+            <p class="text-base sm:text-lg text-taupe leading-relaxed max-w-xl font-light">
+              Bienvenue chez <strong class="font-medium text-charcoal">Emerya Sidi Yahia</strong>. Une parenthèse dédiée à l'éclat du visage, à l'harmonie de la silhouette et à la détente absolue — avec un accompagnement personnalisé et un suivi digital pensé pour vous.
+            </p>
+
+            <!-- Hero CTAs -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+              <button
+                type="button"
+                onclick="switchView('rdv')"
+                class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-charcoal hover:bg-champagne-dark text-white text-sm font-medium tracking-wide transition-all shadow-luxe active:scale-[0.98]"
+              >
+                <span>Réserver un soin</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                onclick="switchView('cliente')"
+                class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-white hover:bg-champagne-soft/60 text-charcoal border border-charcoal/12 text-sm font-medium tracking-wide transition-all active:scale-[0.98]"
+              >
+                <span>Découvrir l'Espace Cliente</span>
+              </button>
+            </div>
+
+            <!-- Quiet Luxury Highlights -->
+            <div class="grid grid-cols-3 gap-6 pt-6 border-t border-charcoal/10 max-w-lg">
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-medium text-charcoal">7j / 7</p>
+                <p class="text-xs text-taupe mt-1">09h00 à 20h00</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-medium text-charcoal">4 univers</p>
+                <p class="text-xs text-taupe mt-1">Visage, Corps &amp; Spa</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-medium text-charcoal">100%</p>
+                <p class="text-xs text-taupe mt-1">Sur-mesure</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Editorial Visual Frame (Bespoke Luxury SVG Composition) -->
+          <div class="lg:col-span-5">
+            <div class="rounded-[2.25rem] bg-white p-4 sm:p-5 border border-charcoal/8 shadow-luxe">
+              <div class="relative rounded-[1.75rem] overflow-hidden bg-gradient-to-br from-[#23201D] via-[#3A342E] to-[#6E5C49] aspect-[4/4.6] p-7 flex flex-col justify-between text-ivory">
+                <!-- Minimalist Gold Line-Art Backdrop -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-35" viewBox="0 0 400 460" fill="none">
+                  <circle cx="315" cy="95" r="105" stroke="#C5A47E" stroke-width="0.9" />
+                  <circle cx="315" cy="95" r="145" stroke="#FAF8F5" stroke-width="0.6" stroke-dasharray="3 6" />
+                  <path d="M-20 350C75 290 165 385 275 315C340 274 375 288 425 250" stroke="#C5A47E" stroke-width="1.1" />
+                  <path d="M-20 385C90 325 180 415 290 345C350 307 380 320 425 290" stroke="#FAF8F5" stroke-width="0.7" />
+                  <path d="M185 115C185 180 140 230 92 260C112 195 142 135 185 115Z" fill="#C5A47E" fill-opacity="0.18" />
+                </svg>
+
+                <!-- Top Label -->
+                <div class="relative flex items-center justify-between">
+                  <span class="px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[11px] uppercase tracking-[0.18em] text-champagne-soft">
+                    Maison de Beauté
+                  </span>
+                  <span class="text-xs text-ivory/75 font-serif italic">Sidi Yahia</span>
+                </div>
+
+                <!-- Center Quote -->
+                <div class="relative my-auto py-6 space-y-3">
+                  <div class="w-10 h-px bg-champagne"></div>
+                  <p class="font-serif text-3xl sm:text-[2.1rem] leading-snug font-normal text-ivory">
+                    « Révéler votre éclat naturel avec douceur, précision et élégance. »
+                  </p>
+                </div>
+
+                <!-- Bottom Floating Preview Card -->
+                <div class="relative rounded-2xl bg-ivory/95 text-charcoal p-4 flex items-center justify-between gap-3 shadow-card">
+                  <div>
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-champagne-dark font-semibold">Suivi Digital</p>
+                    <p class="text-xs text-taupe mt-0.5">Rendez-vous, cure &amp; points fidélité</p>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="switchView('cliente')"
+                    class="px-3.5 py-1.5 rounded-full bg-charcoal text-white text-xs font-medium hover:bg-champagne-dark transition-colors shrink-0"
+                  >
+                    Aperçu
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Prestations / Soins (4 Refined Cards) -->
+    <section id="prestations" class="py-16 sm:py-24 bg-white border-y border-charcoal/8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-14">
+          <div class="max-w-2xl">
+            <p class="text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold mb-2.5">
+              La Carte des Soins
+            </p>
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-medium text-charcoal leading-tight">
+              Des rituels d'exception pensés pour chaque besoin
+            </h2>
+          </div>
+          <p class="text-sm text-taupe max-w-sm leading-relaxed">
+            Choisissez votre prestation pour ouvrir le module de réservation avec votre soin déjà sélectionné.
+          </p>
+        </div>
+
+        <!-- 4 Treatment Cards Container -->
+        <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Rendered cleanly via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section "L'Expérience Emerya" -->
+    <section class="py-16 sm:py-24 bg-ivory">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <p class="text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold mb-2.5">
+            L'Expérience Emerya
+          </p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-medium text-charcoal">
+            Une attention particulière à chaque instant
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Pillar 1 -->
+          <div class="rounded-3xl bg-white border border-charcoal/8 p-7 sm:p-8 shadow-card space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-champagne-soft text-champagne-dark flex items-center justify-center">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 2L14.8 8.5L22 9.3L16.5 14L18.2 21L12 17.3L5.8 21L7.5 14L2 9.3L9.2 8.5L12 2Z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl font-medium text-charcoal">Accompagnement sur-mesure</h3>
+            <p class="text-sm text-taupe leading-relaxed">
+              Chaque protocole débute par une écoute attentive et un diagnostic précis afin d'adapter nos soins à votre peau et à vos objectifs.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="rounded-3xl bg-white border border-charcoal/8 p-7 sm:p-8 shadow-card space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-champagne-soft text-champagne-dark flex items-center justify-center">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl font-medium text-charcoal">Ouvert 7 jours sur 7</h3>
+            <p class="text-sm text-taupe leading-relaxed">
+              Du lundi au dimanche, de 09h00 à 20h00 sans interruption, pour s'accorder librement avec votre emploi du temps à Sidi Yahia.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="rounded-3xl bg-white border border-charcoal/8 p-7 sm:p-8 shadow-card space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-champagne-soft text-champagne-dark flex items-center justify-center">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl font-medium text-charcoal">Espace Cliente &amp; Suivi</h3>
+            <p class="text-sm text-taupe leading-relaxed">
+              Retrouvez vos rendez-vous, le suivi de vos cures, vos points fidélité et les conseils beauté de votre esthéticienne en ligne.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloc Infos Pratiques (Real Sidi Yahia Details) -->
+    <section id="infos-pratiques" class="py-16 sm:py-24 bg-cream/65 border-t border-charcoal/8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Left Card: Address & Direct Contact -->
+          <div class="lg:col-span-7 rounded-[2rem] bg-white border border-charcoal/8 p-7 sm:p-10 shadow-card flex flex-col justify-between gap-8">
+            <div class="space-y-4">
+              <p class="text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold">
+                Infos Pratiques
+              </p>
+              <h2 class="font-serif text-3xl sm:text-4xl font-medium text-charcoal">
+                Emerya Sidi Yahia
+              </h2>
+              <p class="text-sm sm:text-base text-taupe leading-relaxed max-w-lg">
+                Situé au cœur de Sidi Yahia, notre institut vous accueille dans une atmosphère confidentielle et apaisante, sur rendez-vous ou par contact direct.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 pt-3">
+                <div class="rounded-2xl bg-ivory p-4 border border-charcoal/6">
+                  <p class="text-[11px] uppercase tracking-[0.16em] text-champagne-dark font-semibold mb-1">Adresse</p>
+                  <p class="text-sm font-medium text-charcoal leading-snug">
+                    6 Chemin Sidi Yahia,<br />Bir Mourad Raïs, 16000, Alger
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-ivory p-4 border border-charcoal/6">
+                  <p class="text-[11px] uppercase tracking-[0.16em] text-champagne-dark font-semibold mb-1">Téléphone</p>
+                  <a href="tel:+213553463608" class="text-base font-semibold text-charcoal hover:text-champagne-dark transition-colors">
+                    0553 46 36 08
+                  </a>
+                  <p class="text-xs text-taupe mt-0.5">Appel direct &amp; WhatsApp</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-3 pt-4 border-t border-charcoal/8">
+              <a
+                href="tel:+213553463608"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-charcoal hover:bg-champagne-dark text-white text-sm font-medium transition-all"
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>Appeler l'institut</span>
+              </a>
+
+              <a
+                href="https://wa.me/213553463608"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-champagne-soft hover:bg-champagne text-charcoal hover:text-white text-sm font-medium transition-all"
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+                <span>Écrire sur WhatsApp</span>
+              </a>
+
+              <a
+                href="https://maps.app.goo.gl/JjcV4Nqqr2AdhScc8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-ivory hover:bg-cream text-charcoal border border-charcoal/12 text-sm font-medium transition-all"
+              >
+                <span>Google Maps</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Card: 7j/7 Schedule -->
+          <div class="lg:col-span-5 rounded-[2rem] bg-charcoal text-ivory p-7 sm:p-10 shadow-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-6">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.22em] text-champagne font-semibold">Horaires</p>
+                  <h3 class="font-serif text-3xl font-medium mt-1">Ouvert 7j/7</h3>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs text-champagne-soft">
+                  Lun – Dim
+                </span>
+              </div>
+
+              <ul class="divide-y divide-white/10 text-sm">
+                <li class="py-2.5 flex justify-between"><span class="text-ivory/75">Lundi</span><span class="font-medium">09h00 – 20h00</span></li>
+                <li class="py-2.5 flex justify-between"><span class="text-ivory/75">Mardi</span><span class="font-medium">09h00 – 20h00</span></li>
+                <li class="py-2.5 flex justify-between"><span class="text-ivory/75">Mercredi</span><span class="font-medium">09h00 – 20h00</span></li>
+                <li class="py-2.5 flex justify-between"><span class="text-ivory/75">Jeudi</span><span class="font-medium">09h00 – 20h00</span></li>
+                <li class="py-2.5 flex justify-between"><span class="text-ivory/75">Vendredi</span><span class="font-medium">09h00 – 20h00</span></li>
+                <li class="py-2.5 flex justify-between"><span class="text-ivory/75">Samedi</span><span class="font-medium">09h00 – 20h00</span></li>
+                <li class="py-2.5 flex justify-between"><span class="text-ivory/75">Dimanche</span><span class="font-medium">09h00 – 20h00</span></li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-white/10 flex items-center justify-between gap-3">
+              <p class="text-xs text-ivory/65">Dernier créneau réservable à 19h00.</p>
+              <button
+                type="button"
+                onclick="switchView('rdv')"
+                class="text-xs font-semibold text-champagne hover:text-white transition-colors shrink-0"
+              >
+                Prendre RDV →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- VIEW 2: PRENDRE RENDEZ-VOUS (3-STEP INTERACTIVE MODULE)   -->
+  <!-- ========================================================= -->
+  <section id="view-rdv" class="hidden min-h-[80vh] py-10 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold mb-2">
+          Réservation en ligne
+        </p>
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-charcoal">
+          Réservez votre moment chez Emerya
+        </h1>
+        <p class="text-sm sm:text-base text-taupe mt-2.5">
+          Ouvert 7j/7 de 09h00 à 20h00 — 6 Chemin Sidi Yahia, Alger.
+        </p>
+      </div>
+
+      <!-- Booking Container -->
+      <div class="rounded-[2rem] bg-white border border-charcoal/8 shadow-luxe overflow-hidden">
+        <!-- Stepper Navigation -->
+        <div class="bg-cream/80 border-b border-charcoal/8 px-5 sm:px-8 py-4">
+          <div class="flex items-center justify-between gap-2 max-w-xl mx-auto">
+            <button
+              type="button"
+              onclick="goToStep(1)"
+              id="stepper-1"
+              class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-charcoal"
+            >
+              <span class="step-badge w-7 h-7 rounded-full bg-charcoal text-white flex items-center justify-center text-xs">1</span>
+              <span class="hidden sm:inline">Choix du soin</span>
+            </button>
+            <div class="flex-1 h-px bg-charcoal/15 mx-1"></div>
+            <button
+              type="button"
+              onclick="goToStep(2)"
+              id="stepper-2"
+              class="flex items-center gap-2 text-xs sm:text-sm font-medium text-taupe"
+            >
+              <span class="step-badge w-7 h-7 rounded-full bg-ivory border border-charcoal/15 text-taupe flex items-center justify-center text-xs">2</span>
+              <span class="hidden sm:inline">Date &amp; Créneau</span>
+            </button>
+            <div class="flex-1 h-px bg-charcoal/15 mx-1"></div>
+            <button
+              type="button"
+              onclick="goToStep(3)"
+              id="stepper-3"
+              class="flex items-center gap-2 text-xs sm:text-sm font-medium text-taupe"
+            >
+              <span class="step-badge w-7 h-7 rounded-full bg-ivory border border-charcoal/15 text-taupe flex items-center justify-center text-xs">3</span>
+              <span class="hidden sm:inline">Confirmation</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-9 lg:p-11">
+          <!-- STEP 1: Select Service -->
+          <div id="rdv-step-1" class="space-y-6">
+            <div>
+              <h2 class="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
+                1. Sélectionnez votre prestation
+              </h2>
+              <p class="text-sm text-taupe mt-1">
+                Choisissez l'un de nos 4 univers de soins esthétiques et bien-être.
+              </p>
+            </div>
+
+            <div id="rdv-services-list" class="grid sm:grid-cols-2 gap-4">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="flex justify-end pt-3">
+              <button
+                type="button"
+                onclick="goToStep(2)"
+                class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-charcoal hover:bg-champagne-dark text-white text-sm font-medium transition-all"
+              >
+                <span>Choisir la date et l'heure</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Select Date (7/7 Open) & Time Slot (09:00 - 19:00) -->
+          <div id="rdv-step-2" class="hidden space-y-7">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h2 class="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
+                  2. Date &amp; créneau horaire
+                </h2>
+                <p class="text-sm text-taupe mt-1">
+                  Tous les jours sont ouverts (7j/7), créneaux disponibles de 09h00 à 19h00.
+                </p>
+              </div>
+              <span id="rdv-selected-pill" class="self-start px-3.5 py-1.5 rounded-full bg-champagne-soft text-champagne-dark text-xs font-semibold"></span>
+            </div>
+
+            <!-- 7 Days Grid (All Open) -->
+            <div>
+              <p class="text-xs uppercase tracking-[0.18em] text-taupe font-semibold mb-3">
+                Choisir un jour
+              </p>
+              <div id="rdv-days-grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2.5">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+
+            <!-- Time Slots Grid (09:00 to 19:00) -->
+            <div>
+              <p class="text-xs uppercase tracking-[0.18em] text-taupe font-semibold mb-3">
+                Choisir une heure
+              </p>
+              <div id="rdv-slots-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-charcoal/8">
+              <button
+                type="button"
+                onclick="goToStep(1)"
+                class="px-5 py-2.5 rounded-full text-sm font-medium text-taupe hover:text-charcoal hover:bg-cream transition-colors"
+              >
+                ← Retour
+              </button>
+              <button
+                type="button"
+                onclick="goToStep(3)"
+                class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-charcoal hover:bg-champagne-dark text-white text-sm font-medium transition-all"
+              >
+                <span>Continuer</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Quick Details & Confirm -->
+          <div id="rdv-step-3" class="hidden space-y-6">
+            <div>
+              <h2 class="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
+                3. Vos coordonnées
+              </h2>
+              <p class="text-sm text-taupe mt-1">
+                Votre rendez-vous sera immédiatement ajouté à votre Espace Cliente.
+              </p>
+            </div>
+
+            <!-- Recap Card -->
+            <div class="rounded-2xl bg-ivory border border-charcoal/8 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.18em] text-champagne-dark font-semibold">Récapitulatif du soin</p>
+                <p id="recap-service" class="font-serif text-xl font-medium text-charcoal mt-0.5"></p>
+                <p id="recap-datetime" class="text-sm text-taupe mt-0.5"></p>
+              </div>
+              <button
+                type="button"
+                onclick="goToStep(2)"
+                class="self-start sm:self-center text-xs font-semibold text-champagne-dark hover:text-charcoal underline underline-offset-4"
+              >
+                Modifier
+              </button>
+            </div>
+
+            <form id="rdv-form" onsubmit="handleBookingConfirm(event)" class="space-y-4" novalidate>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="client-name" class="block text-sm font-medium text-charcoal mb-1.5">
+                    Nom &amp; Prénom <span class="text-champagne-dark">*</span>
+                  </label>
+                  <input
+                    id="client-name"
+                    type="text"
+                    value="Sarah B."
+                    placeholder="Ex : Sarah Benmansour"
+                    class="w-full px-4 py-3 rounded-xl bg-ivory border border-charcoal/15 text-charcoal placeholder:text-taupe-light focus:outline-none focus:ring-2 focus:ring-champagne/40 focus:border-champagne text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="client-phone" class="block text-sm font-medium text-charcoal mb-1.5">
+                    Téléphone <span class="text-champagne-dark">*</span>
+                  </label>
+                  <input
+                    id="client-phone"
+                    type="tel"
+                    value="0553 00 12 34"
+                    placeholder="Ex : 0550 12 34 56"
+                    class="w-full px-4 py-3 rounded-xl bg-ivory border border-charcoal/15 text-charcoal placeholder:text-taupe-light focus:outline-none focus:ring-2 focus:ring-champagne/40 focus:border-champagne text-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="client-note" class="block text-sm font-medium text-charcoal mb-1.5">
+                  Préférence ou remarque (optionnel)
+                </label>
+                <input
+                  id="client-note"
+                  type="text"
+                  placeholder="Ex : Peau sensible, préférence pour un soin relaxant..."
+                  class="w-full px-4 py-3 rounded-xl bg-ivory border border-charcoal/15 text-charcoal placeholder:text-taupe-light focus:outline-none focus:ring-2 focus:ring-champagne/40 focus:border-champagne text-sm"
+                />
+              </div>
+
+              <p id="rdv-error" class="hidden text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-2.5"></p>
+
+              <div class="flex items-center justify-between pt-4 border-t border-charcoal/8">
+                <button
+                  type="button"
+                  onclick="goToStep(2)"
+                  class="px-5 py-2.5 rounded-full text-sm font-medium text-taupe hover:text-charcoal hover:bg-cream transition-colors"
+                >
+                  ← Retour
+                </button>
+                <button
+                  type="submit"
+                  class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-charcoal hover:bg-champagne-dark text-white text-sm font-medium transition-all shadow-sm active:scale-[0.98]"
+                >
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Confirmer mon rendez-vous</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- STEP 4: Instant Confirmation -->
+          <div id="rdv-step-success" class="hidden text-center py-6 space-y-6">
+            <div class="w-16 h-16 rounded-full bg-champagne-soft text-champagne-dark mx-auto flex items-center justify-center border border-champagne/35">
+              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <div class="space-y-2 max-w-md mx-auto">
+              <p class="text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold">
+                Rendez-vous confirmé
+              </p>
+              <h3 class="font-serif text-3xl font-medium text-charcoal">
+                À très bientôt <span id="confirm-client-name"></span>
+              </h3>
+              <p class="text-sm text-taupe leading-relaxed">
+                Votre soin <strong id="confirm-service-name" class="text-charcoal"></strong> est réservé pour le
+                <strong id="confirm-datetime-text" class="text-charcoal"></strong> au 6 Chemin Sidi Yahia.
+                Il apparaît désormais en direct dans votre Espace Cliente (+40 pts fidélité).
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <button
+                type="button"
+                onclick="switchView('cliente')"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-charcoal hover:bg-champagne-dark text-white text-sm font-medium transition-all"
+              >
+                <span>Voir mon Espace Cliente</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onclick="resetBooking()"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-cream hover:bg-champagne-soft text-charcoal text-sm font-medium transition-colors"
+              >
+                Nouvelle réservation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- VIEW 3: ESPACE CLIENTE (INTERACTIVE DEMO DASHBOARD)       -->
+  <!-- ========================================================= -->
+  <section id="view-cliente" class="hidden min-h-[82vh] py-8 sm:py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
+      <!-- Discreet Demo Mode Banner -->
+      <div class="rounded-2xl bg-champagne-soft/80 border border-champagne/30 px-5 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-champagne-dark shrink-0"></span>
+          <p class="text-xs sm:text-sm text-charcoal">
+            <strong>Aperçu Démo — Compte de Sarah B.</strong>
+            <span class="text-taupe"> • Espace personnel synchronisé en temps réel avec vos réservations.</span>
+          </p>
+        </div>
+        <button
+          type="button"
+          onclick="switchView('rdv')"
+          class="self-start sm:self-center shrink-0 px-4 py-1.5 rounded-full bg-charcoal text-white hover:bg-champagne-dark text-xs font-medium transition-colors"
+        >
+          + Réserver un soin
+        </button>
+      </div>
+
+      <!-- Summary KPI Cards -->
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- KPI 1: Prochain rendez-vous -->
+        <div class="rounded-3xl bg-white border border-charcoal/8 p-6 shadow-card flex flex-col justify-between gap-4">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase tracking-[0.18em] text-taupe font-semibold">Prochain rendez-vous</span>
+            <span id="kpi-new-badge" class="hidden px-2.5 py-0.5 rounded-full bg-champagne-soft text-champagne-dark text-[11px] font-semibold">
+              Nouveau
+            </span>
+          </div>
+          <div>
+            <p id="kpi-next-date" class="font-serif text-2xl font-medium text-charcoal"></p>
+            <p id="kpi-next-service" class="text-sm text-champagne-dark font-medium mt-1"></p>
+          </div>
+          <div class="pt-3 border-t border-charcoal/8 flex items-center justify-between text-xs text-taupe">
+            <span>Emerya Sidi Yahia</span>
+            <button type="button" onclick="switchView('rdv')" class="text-charcoal font-semibold hover:text-champagne-dark">
+              Ajouter un RDV
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI 2: Séances restantes -->
+        <div class="rounded-3xl bg-white border border-charcoal/8 p-6 shadow-card flex flex-col justify-between gap-4">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase tracking-[0.18em] text-taupe font-semibold">Cure Éclat &amp; Silhouette</span>
+            <span class="text-xs font-semibold text-champagne-dark">67%</span>
+          </div>
+          <div>
+            <div class="flex items-baseline gap-1.5">
+              <span class="font-serif text-3xl font-medium text-charcoal">4</span>
+              <span class="text-sm text-taupe">/ 6 séances réalisées</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-cream mt-3 overflow-hidden">
+              <div class="h-full bg-champagne rounded-full" style="width: 67%;"></div>
+            </div>
+          </div>
+          <p class="text-xs text-taupe pt-3 border-t border-charcoal/8">
+            Il reste 2 séances incluses dans votre forfait actif.
+          </p>
+        </div>
+
+        <!-- KPI 3: Points Fidélité -->
+        <div class="rounded-3xl bg-white border border-charcoal/8 p-6 shadow-card flex flex-col justify-between gap-4">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase tracking-[0.18em] text-taupe font-semibold">Points Fidélité</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-ivory border border-charcoal/10 text-[11px] font-medium text-charcoal">
+              Membre Privilège
+            </span>
+          </div>
+          <div>
+            <p class="font-serif text-3xl font-medium text-charcoal">
+              <span id="kpi-loyalty-points">320</span> <span class="text-lg text-taupe font-sans font-normal">pts</span>
+            </p>
+            <p class="text-xs text-taupe mt-1">Plus que <span id="kpi-points-remaining">180</span> pts pour un soin visage offert.</p>
+          </div>
+          <div class="w-full h-1.5 rounded-full bg-cream overflow-hidden">
+            <div id="kpi-loyalty-bar" class="h-full bg-charcoal rounded-full transition-all duration-500" style="width: 64%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appointments & History + Personalized Routine -->
+      <div class="grid lg:grid-cols-12 gap-6">
+        <!-- Left Column: Upcoming RDVs + History -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Upcoming Appointments -->
+          <div class="rounded-3xl bg-white border border-charcoal/8 p-6 sm:p-7 shadow-card">
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div>
+                <h2 class="font-serif text-2xl font-medium text-charcoal">Rendez-vous à venir</h2>
+                <p class="text-xs text-taupe mt-0.5">Gérez ou annulez vos séances programmées en un clic.</p>
+              </div>
+              <span id="upcoming-count-badge" class="px-3 py-1 rounded-full bg-cream text-xs font-semibold text-charcoal"></span>
+            </div>
+
+            <div id="upcoming-appointments-list" class="space-y-3">
+              <!-- Rendered dynamically via JS -->
+            </div>
+          </div>
+
+          <!-- Care History -->
+          <div class="rounded-3xl bg-white border border-charcoal/8 p-6 sm:p-7 shadow-card">
+            <h2 class="font-serif text-2xl font-medium text-charcoal mb-4">Historique des soins</h2>
+            <div class="divide-y divide-charcoal/8">
+              <div class="py-3.5 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-sm font-medium text-charcoal">Soins Visage &amp; Éclat — Hydra-soin</p>
+                  <p class="text-xs text-taupe mt-0.5">12 novembre • 60 min • Praticienne : Lina</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-ivory border border-charcoal/10 text-[11px] font-medium text-taupe shrink-0">
+                  Réalisé
+                </span>
+              </div>
+              <div class="py-3.5 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-sm font-medium text-charcoal">Soins Corps &amp; Silhouette — Drainage</p>
+                  <p class="text-xs text-taupe mt-0.5">04 novembre • 50 min • Praticienne : Meriem</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-ivory border border-charcoal/10 text-[11px] font-medium text-taupe shrink-0">
+                  Réalisé
+                </span>
+              </div>
+              <div class="py-3.5 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-sm font-medium text-charcoal">Rituel Spa &amp; Détente — Aromathérapie</p>
+                  <p class="text-xs text-taupe mt-0.5">25 octobre • 60 min • Praticienne : Lina</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-ivory border border-charcoal/10 text-[11px] font-medium text-taupe shrink-0">
+                  Réalisé
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Suivi & Recommandations Personnalisées -->
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Interactive Beauty Routine -->
+          <div class="rounded-3xl bg-white border border-charcoal/8 p-6 sm:p-7 shadow-card space-y-5">
+            <div class="flex items-center justify-between">
+              <div>
+                <h2 class="font-serif text-2xl font-medium text-charcoal">Routine entre deux séances</h2>
+                <p class="text-xs text-taupe mt-0.5">Recommandations de votre esthéticienne</p>
+              </div>
+              <span id="routine-counter" class="px-2.5 py-1 rounded-full bg-champagne-soft text-champagne-dark text-xs font-semibold">
+                2 / 4
+              </span>
+            </div>
+
+            <div class="w-full h-1.5 rounded-full bg-cream overflow-hidden">
+              <div id="routine-progress-bar" class="h-full bg-champagne rounded-full transition-all duration-300" style="width: 50%;"></div>
+            </div>
+
+            <div id="beauty-routine-list" class="space-y-2.5">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Visual Progression Indicators -->
+            <div class="pt-4 border-t border-charcoal/8 space-y-3.5">
+              <p class="text-[11px] uppercase tracking-[0.18em] text-champagne-dark font-semibold">
+                Suivi de progression (Cure en cours)
+              </p>
+
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-xs">
+                  <span class="text-charcoal font-medium">Éclat &amp; Hydratation cutanée</span>
+                  <span class="text-taupe">85%</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-cream overflow-hidden">
+                  <div class="h-full bg-champagne rounded-full" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-xs">
+                  <span class="text-charcoal font-medium">Tonicité &amp; Légèreté silhouette</span>
+                  <span class="text-taupe">74%</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-cream overflow-hidden">
+                  <div class="h-full bg-charcoal rounded-full" style="width: 74%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Esthetician Note -->
+            <div class="rounded-2xl bg-ivory border border-charcoal/8 p-4">
+              <p class="text-[11px] uppercase tracking-[0.16em] text-champagne-dark font-semibold mb-1">
+                Conseil personnalisé
+              </p>
+              <p class="text-xs sm:text-sm text-taupe leading-relaxed">
+                « Votre peau réagit très bien à l'Hydra-soin, Sarah. Continuez la protection SPF 50 le matin et l'hydratation douce avant votre prochaine séance. »
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Refined Footer with Real Coordinates -->
+  <footer class="bg-white border-t border-charcoal/8 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+      <div>
+        <p class="font-serif text-xl font-semibold tracking-wide text-charcoal">EMERYA SIDI YAHIA</p>
+        <p class="text-xs text-taupe mt-1">
+          6 Chemin Sidi Yahia, Bir Mourad Raïs, 16000, Alger • Ouvert 7j/7 (09h00 – 20h00)
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium">
+        <a href="tel:+213553463608" class="text-charcoal hover:text-champagne-dark transition-colors">
+          Tél : 0553 46 36 08
+        </a>
+        <span class="text-charcoal/20">•</span>
+        <a
+          href="https://wa.me/213553463608"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-champagne-dark hover:text-charcoal transition-colors"
+        >
+          WhatsApp
+        </a>
+        <span class="text-charcoal/20">•</span>
+        <span class="text-taupe">Démo interactive sur-mesure</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- VANILLA JAVASCRIPT APPLICATION LOGIC                      -->
+  <!-- ========================================================= -->
+  <script>
+    // ---------------------------------------------------------
+    // 1. SERVICES CATALOG (4 CATEGORIES)
+    // ---------------------------------------------------------
+    const SERVICES = [
+      {
+        id: 'visage-eclat',
+        title: 'Soins Visage & Éclat',
+        subtitle: 'Hydra-soin, anti-âge, diagnostic peau',
+        duration: '60 min',
+        tag: 'Visage',
+        gradient: 'from-[#2A2623] via-[#4A4139] to-[#8C755C]',
+        svgArt: `
+          <circle cx="250" cy="45" r="58" stroke="#FAF8F5" stroke-opacity="0.28" stroke-width="1" fill="none" />
+          <circle cx="250" cy="45" r="34" stroke="#C5A47E" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="3 4" fill="none" />
+          <path d="M20 120C95 85 165 135 250 92C285 75 305 80 330 62" stroke="#FAF8F5" stroke-opacity="0.4" stroke-width="1.2" fill="none" />
+        `,
+      },
+      {
+        id: 'corps-silhouette',
+        title: 'Soins Corps & Silhouette',
+        subtitle: 'Drainage, modelage minceur, raffermissement',
+        duration: '50 min',
+        tag: 'Silhouette',
+        gradient: 'from-[#3A3530] via-[#60564C] to-[#A6927B]',
+        svgArt: `
+          <path d="M110 10C150 55 150 105 110 150" stroke="#C5A47E" stroke-opacity="0.65" stroke-width="1.3" fill="none" />
+          <path d="M138 10C178 55 178 105 138 150" stroke="#FAF8F5" stroke-opacity="0.35" stroke-width="1" fill="none" />
+          <ellipse cx="265" cy="95" rx="68" ry="36" transform="rotate(-15 265 95)" stroke="#FAF8F5" stroke-opacity="0.25" stroke-width="1" fill="none" />
+        `,
+      },
+      {
+        id: 'rituel-spa',
+        title: 'Rituel Spa & Détente',
+        subtitle: 'Massage relaxant, aromathérapie',
+        duration: '60 min',
+        tag: 'Bien-être',
+        gradient: 'from-[#242220] via-[#433E39] to-[#7A7267]',
+        svgArt: `
+          <path d="M-10 68Q65 36 140 68T290 68T410 68" stroke="#C5A47E" stroke-opacity="0.55" stroke-width="1.2" fill="none" />
+          <path d="M-10 95Q65 63 140 95T290 95T410 95" stroke="#FAF8F5" stroke-opacity="0.35" stroke-width="1" fill="none" />
+          <path d="M-10 122Q65 90 140 122T290 122T410 122" stroke="#FAF8F5" stroke-opacity="0.2" stroke-width="1" fill="none" />
+        `,
+      },
+      {
+        id: 'beaute-esthetique',
+        title: 'Beauté & Esthétique',
+        subtitle: 'Manucure, mise en beauté, soins ciblés',
+        duration: '45 min',
+        tag: 'Beauté',
+        gradient: 'from-[#4C4238] via-[#7B6957] to-[#C5A47E]',
+        svgArt: `
+          <path d="M220 20L245 75L305 82L258 118L272 170L220 138L168 170L182 118L135 82L195 75L220 20Z" stroke="#FAF8F5" stroke-opacity="0.28" stroke-width="1" fill="none" />
+          <circle cx="80" cy="85" r="34" stroke="#FAF8F5" stroke-opacity="0.32" stroke-width="1" fill="none" />
+        `,
+      },
+    ];
+
+    // Time slots: 09:00 to 19:00 (Institute open 09:00 – 20:00, 7j/7)
+    const TIME_SLOTS = [
+      '09:00', '10:00', '11:00', '12:00', '13:00',
+      '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'
+    ];
+
+    // Generate next 7 calendar days — ALL 7 days open (no closed day)
+    function generateOpenDays() {
+      const shortNames = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+      const fullNames = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+      const months = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+
+      const days = [];
+      const today = new Date();
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(today);
+        d.setDate(today.getDate() + i);
+        const dow = d.getDay();
+        days.push({
+          id: d.toISOString().split('T')[0],
+          shortName: shortNames[dow],
+          fullName: fullNames[dow],
+          dayNumber: d.getDate(),
+          month: months[d.getMonth()],
+          label: `${fullNames[dow]} ${d.getDate()} ${months[d.getMonth()]}`,
+        });
+      }
+      return days;
+    }
+
+    const UPCOMING_DAYS = generateOpenDays();
+
+    // Central Reactive State
+    const state = {
+      activeView: 'institut', // 'institut' | 'rdv' | 'cliente'
+      bookingStep: 1,
+      selectedServiceId: SERVICES[0].id,
+      selectedDayId: UPCOMING_DAYS[1].id, // Tomorrow by default
+      selectedSlot: '11:00',
+      loyaltyPoints: 320,
+      hasNewBooking: false,
+      upcomingAppointments: [
+        {
+          id: 'init-1',
+          serviceTitle: 'Soins Visage & Éclat',
+          duration: '60 min',
+          dateLabel: UPCOMING_DAYS[2].label,
+          slot: '14:00',
+          clientName: 'Sarah B.',
+          isNew: false,
+        },
+      ],
+      beautyRoutine: [
+        { id: 'r1', label: 'Nettoyage doux & sérum hydratant matin et soir', done: true },
+        { id: 'r2', label: 'Protection solaire SPF 50 quotidienne', done: true },
+        { id: 'r3', label: 'Hydratation : 1,5L à 2L d’eau par jour', done: false },
+        { id: 'r4', label: 'Auto-massage drainage léger (5 min le soir)', done: false },
+      ],
+    };
+
+    // ---------------------------------------------------------
+    // 2. TOAST NOTIFICATION HELPER
+    // ---------------------------------------------------------
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className =
+        'pointer-events-auto rounded-2xl bg-charcoal text-ivory px-4 py-3 shadow-luxe border border-white/10 text-xs sm:text-sm flex items-center gap-3 transition-all duration-300 translate-y-2 opacity-0';
+      toast.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-champagne shrink-0"></span>
+        <span class="leading-snug">${message}</span>
+      `;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-2', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3600);
+    }
+
+    // ---------------------------------------------------------
+    // 3. VIEW NAVIGATION (3 TABS: L'INSTITUT / RDV / CLIENTE)
+    // ---------------------------------------------------------
+    function switchView(view) {
+      state.activeView = view;
+      const views = ['institut', 'rdv', 'cliente'];
+
+      views.forEach((v) => {
+        const section = document.getElementById(`view-${v}`);
+        const deskBtn = document.getElementById(`nav-desktop-${v}`);
+        const mobBtn = document.getElementById(`nav-mobile-${v}`);
+        const isActive = v === view;
+
+        if (isActive) {
+          section.classList.remove('hidden');
+          deskBtn.className =
+            'px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-white text-charcoal shadow-sm' +
+            (v === 'cliente' ? ' flex items-center gap-2' : '');
+          mobBtn.className =
+            'py-2 px-2 rounded-xl text-xs font-medium transition-all bg-white text-charcoal shadow-sm' +
+            (v === 'cliente' ? ' flex items-center justify-center gap-1' : '');
+        } else {
+          section.classList.add('hidden');
+          deskBtn.className =
+            'px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 text-taupe hover:text-charcoal' +
+            (v === 'cliente' ? ' flex items-center gap-2' : '');
+          mobBtn.className =
+            'py-2 px-2 rounded-xl text-xs font-medium transition-all text-taupe' +
+            (v === 'cliente' ? ' flex items-center justify-center gap-1' : '');
+        }
+      });
+
+      if (view === 'cliente') {
+        renderClientDashboard();
+      }
+      if (view === 'rdv') {
+        renderBookingServices();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---------------------------------------------------------
+    // 4. RENDER PUBLIC SERVICE CARDS (VIEW 1)
+    // ---------------------------------------------------------
+    function renderServiceCards() {
+      const grid = document.getElementById('services-grid');
+      grid.innerHTML = SERVICES.map(
+        (srv) => `
+          <article class="group rounded-3xl bg-ivory border border-charcoal/8 overflow-hidden shadow-card hover:shadow-luxe transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="relative h-36 bg-gradient-to-br ${srv.gradient} p-4 flex flex-col justify-between overflow-hidden">
+                <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 320 150" preserveAspectRatio="none">
+                  ${srv.svgArt}
+                </svg>
+                <div class="relative flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-[11px] font-medium text-ivory">
+                    ${srv.tag}
+                  </span>
+                  <span class="px-2.5 py-1 rounded-full bg-charcoal/35 backdrop-blur-sm text-[11px] font-medium text-ivory">
+                    ${srv.duration}
+                  </span>
+                </div>
+                <div class="relative w-8 h-px bg-champagne"></div>
+              </div>
+
+              <div class="p-5 space-y-2">
+                <h3 class="font-serif text-2xl font-medium text-charcoal leading-snug">
+                  ${srv.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-taupe leading-relaxed">
+                  ${srv.subtitle}
+                </p>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 pt-2">
+              <button
+                type="button"
+                onclick="bookSpecificService('${srv.id}')"
+                class="w-full py-2.5 px-4 rounded-full bg-white hover:bg-charcoal hover:text-white text-charcoal text-xs sm:text-sm font-medium border border-charcoal/12 group-hover:border-charcoal transition-all"
+              >
+                Réserver ce soin
+              </button>
+            </div>
+          </article>
+        `
+      ).join('');
+    }
+
+    function bookSpecificService(serviceId) {
+      state.selectedServiceId = serviceId;
+      switchView('rdv');
+      goToStep(2);
+      const srv = SERVICES.find((s) => s.id === serviceId);
+      if (srv) {
+        showToast(`Soin présélectionné : ${srv.title}`);
+      }
+    }
+
+    // ---------------------------------------------------------
+    // 5. BOOKING SIMULATOR (VIEW 2)
+    // ---------------------------------------------------------
+    function renderBookingServices() {
+      const list = document.getElementById('rdv-services-list');
+      list.innerHTML = SERVICES.map((srv) => {
+        const selected = state.selectedServiceId === srv.id;
+        return `
+          <button
+            type="button"
+            onclick="selectBookingService('${srv.id}')"
+            class="text-left p-5 rounded-2xl border transition-all flex items-start justify-between gap-3 ${
+              selected
+                ? 'bg-champagne-soft/65 border-champagne ring-1 ring-champagne'
+                : 'bg-ivory border-charcoal/10 hover:bg-cream/60'
+            }"
+          >
+            <div>
+              <p class="font-serif text-xl font-medium text-charcoal">${srv.title}</p>
+              <p class="text-xs text-taupe mt-1">${srv.subtitle}</p>
+              <span class="inline-block mt-2 text-[11px] font-semibold text-champagne-dark">${srv.duration}</span>
+            </div>
+            <span class="w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-1 ${
+              selected ? 'bg-charcoal border-charcoal text-white' : 'border-charcoal/25'
+            }">
+              ${
+                selected
+                  ? '<svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg>'
+                  : ''
+              }
+            </span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectBookingService(id) {
+      state.selectedServiceId = id;
+      renderBookingServices();
+    }
+
+    function renderBookingDays() {
+      const grid = document.getElementById('rdv-days-grid');
+      grid.innerHTML = UPCOMING_DAYS.map((day) => {
+        const selected = state.selectedDayId === day.id;
+        return `
+          <button
+            type="button"
+            onclick="selectBookingDay('${day.id}')"
+            class="p-3 rounded-2xl border text-center transition-all ${
+              selected
+                ? 'bg-charcoal text-white border-charcoal shadow-sm'
+                : 'bg-ivory text-charcoal border-charcoal/10 hover:bg-cream'
+            }"
+          >
+            <p class="text-[11px] uppercase tracking-wider font-medium ${selected ? 'text-champagne' : 'text-taupe'}">
+              ${day.shortName}
+            </p>
+            <p class="font-serif text-xl font-semibold mt-0.5">${day.dayNumber}</p>
+            <p class="text-[11px] ${selected ? 'text-ivory/80' : 'text-taupe'}">${day.month}</p>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectBookingDay(dayId) {
+      state.selectedDayId = dayId;
+      renderBookingDays();
+    }
+
+    function renderTimeSlots() {
+      const grid = document.getElementById('rdv-slots-grid');
+      grid.innerHTML = TIME_SLOTS.map((slot) => {
+        const selected = state.selectedSlot === slot;
+        return `
+          <button
+            type="button"
+            onclick="selectTimeSlot('${slot}')"
+            class="py-2.5 px-3 rounded-xl border text-xs sm:text-sm font-medium transition-all ${
+              selected
+                ? 'bg-champagne text-white border-champagne shadow-sm'
+                : 'bg-ivory text-charcoal border-charcoal/10 hover:bg-cream'
+            }"
+          >
+            ${slot}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectTimeSlot(slot) {
+      state.selectedSlot = slot;
+      renderTimeSlots();
+    }
+
+    function goToStep(step) {
+      state.bookingStep = step;
+      [1, 2, 3].forEach((s) => {
+        const panel = document.getElementById(`rdv-step-${s}`);
+        const stepper = document.getElementById(`stepper-${s}`);
+        const badge = stepper.querySelector('.step-badge');
+
+        if (s === step) {
+          panel.classList.remove('hidden');
+          stepper.className = 'flex items-center gap-2 text-xs sm:text-sm font-semibold text-charcoal';
+          badge.className = 'step-badge w-7 h-7 rounded-full bg-charcoal text-white flex items-center justify-center text-xs';
+        } else {
+          panel.classList.add('hidden');
+          if (s < step) {
+            stepper.className = 'flex items-center gap-2 text-xs sm:text-sm font-medium text-champagne-dark';
+            badge.className = 'step-badge w-7 h-7 rounded-full bg-champagne-soft text-champagne-dark flex items-center justify-center text-xs font-semibold';
+          } else {
+            stepper.className = 'flex items-center gap-2 text-xs sm:text-sm font-medium text-taupe';
+            badge.className = 'step-badge w-7 h-7 rounded-full bg-ivory border border-charcoal/15 text-taupe flex items-center justify-center text-xs';
+          }
+        }
+      });
+
+      document.getElementById('rdv-step-success').classList.add('hidden');
+
+      const srv = SERVICES.find((s) => s.id === state.selectedServiceId);
+      const day = UPCOMING_DAYS.find((d) => d.id === state.selectedDayId);
+
+      if (step === 2 && srv) {
+        document.getElementById('rdv-selected-pill').textContent = `${srv.title} (${srv.duration})`;
+        renderBookingDays();
+        renderTimeSlots();
+      }
+
+      if (step === 3 && srv && day) {
+        document.getElementById('recap-service').textContent = `${srv.title} (${srv.duration})`;
+        document.getElementById('recap-datetime').textContent = `${day.label} à ${state.selectedSlot.replace(':', 'h')}`;
+      }
+    }
+
+    function handleBookingConfirm(event) {
+      event.preventDefault();
+      const nameInput = document.getElementById('client-name');
+      const phoneInput = document.getElementById('client-phone');
+      const errorBox = document.getElementById('rdv-error');
+
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+
+      if (!name || phone.length < 8) {
+        errorBox.textContent = 'Veuillez saisir votre nom ainsi qu’un numéro de téléphone valide.';
+        errorBox.classList.remove('hidden');
+        return;
+      }
+
+      errorBox.classList.add('hidden');
+
+      const srv = SERVICES.find((s) => s.id === state.selectedServiceId);
+      const day = UPCOMING_DAYS.find((d) => d.id === state.selectedDayId);
+
+      // Push new appointment to the top of Espace Cliente
+      const newAppt = {
+        id: 'rdv-' + Date.now(),
+        serviceTitle: srv.title,
+        duration: srv.duration,
+        dateLabel: day.label,
+        slot: state.selectedSlot,
+        clientName: name,
+        isNew: true,
+      };
+
+      state.upcomingAppointments.unshift(newAppt);
+      state.loyaltyPoints += 40;
+      state.hasNewBooking = true;
+
+      // Update confirmation view
+      document.getElementById('confirm-client-name').textContent = name;
+      document.getElementById('confirm-service-name').textContent = `${srv.title} (${srv.duration})`;
+      document.getElementById('confirm-datetime-text').textContent = `${day.label} à ${state.selectedSlot.replace(':', 'h')}`;
+
+      document.getElementById('rdv-step-3').classList.add('hidden');
+      document.getElementById('rdv-step-success').classList.remove('hidden');
+
+      renderClientDashboard();
+      showToast('Rendez-vous confirmé et ajouté à votre Espace Cliente.');
+    }
+
+    function resetBooking() {
+      goToStep(1);
+    }
+
+    // ---------------------------------------------------------
+    // 6. ESPACE CLIENTE (SYNCED APPOINTMENTS & ROUTINE)
+    // ---------------------------------------------------------
+    function renderClientDashboard() {
+      // KPI 1: Next Appointment
+      const nextDateEl = document.getElementById('kpi-next-date');
+      const nextSrvEl = document.getElementById('kpi-next-service');
+      const newBadge = document.getElementById('kpi-new-badge');
+
+      if (state.upcomingAppointments.length > 0) {
+        const next = state.upcomingAppointments[0];
+        nextDateEl.textContent = `${next.dateLabel} • ${next.slot.replace(':', 'h')}`;
+        nextSrvEl.textContent = `${next.serviceTitle} (${next.duration})`;
+        if (next.isNew) {
+          newBadge.classList.remove('hidden');
+        } else {
+          newBadge.classList.add('hidden');
+        }
+      } else {
+        nextDateEl.textContent = 'Aucun RDV prévu';
+        nextSrvEl.textContent = 'Planifiez votre prochain soin';
+        newBadge.classList.add('hidden');
+      }
+
+      // KPI 3: Loyalty Points
+      document.getElementById('kpi-loyalty-points').textContent = state.loyaltyPoints;
+      const remaining = Math.max(0, 500 - state.loyaltyPoints);
+      document.getElementById('kpi-points-remaining').textContent = remaining;
+      const pct = Math.min(100, Math.round((state.loyaltyPoints / 500) * 100));
+      document.getElementById('kpi-loyalty-bar').style.width = `${pct}%`;
+
+      // Upcoming Appointments List
+      const listEl = document.getElementById('upcoming-appointments-list');
+      const countBadge = document.getElementById('upcoming-count-badge');
+      countBadge.textContent = `${state.upcomingAppointments.length} prévu${state.upcomingAppointments.length > 1 ? 's' : ''}`;
+
+      if (state.upcomingAppointments.length === 0) {
+        listEl.innerHTML = `
+          <div class="rounded-2xl bg-ivory border border-dashed border-charcoal/15 p-6 text-center space-y-3">
+            <p class="text-sm text-taupe">Vous n'avez aucun rendez-vous programmé pour le moment.</p>
+            <button
+              type="button"
+              onclick="switchView('rdv')"
+              class="px-5 py-2 rounded-full bg-charcoal text-white text-xs font-medium hover:bg-champagne-dark transition-colors"
+            >
+              Prendre un rendez-vous
+            </button>
+          </div>
+        `;
+      } else {
+        listEl.innerHTML = state.upcomingAppointments
+          .map(
+            (appt) => `
+              <div class="rounded-2xl bg-ivory border ${appt.isNew ? 'border-champagne/60' : 'border-charcoal/8'} p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <p class="font-serif text-lg font-medium text-charcoal">${appt.serviceTitle}</p>
+                    ${
+                      appt.isNew
+                        ? '<span class="px-2 py-0.5 rounded-full bg-champagne-soft text-champagne-dark text-[10px] font-semibold">Nouveau</span>'
+                        : ''
+                    }
+                  </div>
+                  <p class="text-xs text-taupe mt-0.5">
+                    ${appt.dateLabel} à ${appt.slot.replace(':', 'h')} • ${appt.duration} • 6 Chemin Sidi Yahia
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onclick="cancelAppointment('${appt.id}')"
+                  class="self-start sm:self-center px-3.5 py-1.5 rounded-full border border-charcoal/12 bg-white hover:border-red-300 hover:text-red-700 text-xs font-medium text-taupe transition-colors shrink-0"
+                >
+                  Annuler
+                </button>
+              </div>
+            `
+          )
+          .join('');
+      }
+
+      renderBeautyRoutine();
+    }
+
+    function cancelAppointment(id) {
+      state.upcomingAppointments = state.upcomingAppointments.filter((a) => a.id !== id);
+      renderClientDashboard();
+      showToast('Le rendez-vous test a bien été annulé.');
+    }
+
+    function renderBeautyRoutine() {
+      const container = document.getElementById('beauty-routine-list');
+      const completed = state.beautyRoutine.filter((item) => item.done).length;
+      const total = state.beautyRoutine.length;
+      const pct = Math.round((completed / total) * 100);
+
+      document.getElementById('routine-counter').textContent = `${completed} / ${total}`;
+      document.getElementById('routine-progress-bar').style.width = `${pct}%`;
+
+      container.innerHTML = state.beautyRoutine
+        .map(
+          (item) => `
+            <button
+              type="button"
+              onclick="toggleRoutine('${item.id}')"
+              class="w-full text-left p-3.5 rounded-2xl border transition-all flex items-center gap-3 ${
+                item.done
+                  ? 'bg-champagne-soft/55 border-champagne/35'
+                  : 'bg-ivory border-charcoal/8 hover:bg-cream/60'
+              }"
+            >
+              <span class="w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-colors ${
+                item.done ? 'bg-charcoal border-charcoal text-white' : 'border-charcoal/25 bg-white'
+              }">
+                ${
+                  item.done
+                    ? '<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12" /></svg>'
+                    : ''
+                }
+              </span>
+              <span class="text-xs sm:text-sm leading-snug ${item.done ? 'line-through text-taupe' : 'text-charcoal font-medium'}">
+                ${item.label}
+              </span>
+            </button>
+          `
+        )
+        .join('');
+    }
+
+    function toggleRoutine(id) {
+      const item = state.beautyRoutine.find((r) => r.id === id);
+      if (item) {
+        item.done = !item.done;
+        renderBeautyRoutine();
+      }
+    }
+
+    // ---------------------------------------------------------
+    // 7. INITIALIZATION
+    // ---------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServiceCards();
+      renderBookingServices();
+      renderBookingDays();
+      renderTimeSlots();
+      renderClientDashboard();
+    });
+  </script>
+</body>
+</html>
